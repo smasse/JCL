@@ -1,18 +1,213 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+  ~ Copyright (c) 2022 Serge Masse
+  ~
+  ~ Redistribution and use in source and binary forms, with or without modification, are permitted
+  ~ provided that the following conditions are met:
+  ~
+  ~ 1. Redistributions of source code must retain the above copyright notice, this list of conditions
+  ~ and the following disclaimer.
+  ~
+  ~ 2. Redistributions in binary form must reproduce the above copyright notice, this list of
+  ~ conditions and the following disclaimer in the documentation and/or other materials
+  ~ provided with the distribution.
+  ~
+  ~ 3. Neither the name of the copyright holder nor the names of its contributors may be used
+  ~ to endorse or promote products derived from this software without specific prior written
+  ~ permission.
+  ~
+  ~ 4. This software, as well as products derived from it, must not be used for the purpose of
+  ~ killing, harming, harassing, or capturing animals.
+  ~
+  ~ 5. This software, as well as products derived from it, must be used with free dolphins, and
+  ~ must not be used with captive dolphins kept for exploitation, such as for generating revenues
+  ~ or for research or military purposes; the only ethical use of the app with captive dolphins
+  ~ would be with dolphins that cannot be set free for their own safety AND are kept in a well-
+  ~ managed sanctuary or the equivalent.
+  ~
+  ~ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  ~ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+  ~ WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+  ~ IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+  ~ INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+  ~ BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  ~ DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  ~ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  ~ (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+  ~ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  -->
+<!-- layout for small screens -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    tools:context=".MainActivity"
+    android:id="@+id/root_jcl_main"
+    android:layout_margin="5dip"
+    android:orientation="vertical"
+    >
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/top_view_jcl_main"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:layout_margin="5dip"
+        android:textStyle="bold"
+        android:text="JCL Sound Command Executor with DC Dolphin Comm" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/layoutForButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dip"
+                android:orientation="vertical"
+                >
+                <Button
+                    android:id="@+id/buttonExecute"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Execute" />
+                <Button
+                    android:id="@+id/buttonSendSuccess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Send Success to DC" />
+                <Button
+                    android:id="@+id/buttonSendFailure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Send Failure to DC" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layoutForToggleButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dip"
+                android:orientation="vertical"
+                >
+                <ToggleButton
+                    android:id="@+id/toggleButtonExecuteImmediately"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip"
+                    android:layout_gravity="center_horizontal"
+                    android:textOff="Execution is Not Immediate"
+                    android:textOn="Execution is Immediate" />
+                <ToggleButton
+                    android:id="@+id/toggleButtonSendImmediately"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip"
+                    android:layout_gravity="center_horizontal"
+                    android:textOff="Sending is Not Immediate"
+                    android:textOn="Sending is Immediate" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/layoutForTexts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="5dip">
+                <TextView
+                    android:id="@+id/textViewCommandLabel"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="5dip"
+                    android:textStyle="bold"
+                    android:text="The sound command data received via DC:" />
+                <ScrollView
+                    android:id="@+id/scroll_jcl_data"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip">
+                    <TextView
+                        android:id="@+id/textViewCommandData"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="5dip"
+                        android:text="" />
+                </ScrollView>
+                <TextView
+                    android:id="@+id/textViewResultsLabel"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="5dip"
+                    android:textStyle="bold"
+                    android:text="The Automated Execution Results:" />
+                <ScrollView
+                    android:id="@+id/scroll_jcl_results"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip">
+                    <TextView
+                        android:id="@+id/textViewResults"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="5dip"
+                        android:text="" />
+                </ScrollView>
+                <TextView
+                    android:id="@+id/textViewManualResultsLabel"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="5dip"
+                    android:textStyle="bold"
+                    android:text="The Manual Results:" />
+                <EditText
+                    android:id="@+id/editTextManualResults"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip"
+                    android:minHeight="48dp"
+                    android:text="Type your manual results here"
+                    android:maxLines="20"
+                    android:inputType="textMultiLine"
+                    android:focusable="true"
+                    android:clickable="true"
+                    />
+                <TextView
+                    android:id="@+id/jcl_log_label"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip"
+                    android:textStyle="bold"
+                    android:text="Log:" />
+                <ScrollView
+                    android:id="@+id/scroll_jcl_log"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dip">
+                    <TextView
+                        android:id="@+id/jcl_log_tv"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="5dip"
+                        android:text="" />
+                </ScrollView>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

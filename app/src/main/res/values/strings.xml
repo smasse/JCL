@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">JCL</string>
+    <string name="app_name_short">JCL Sound Command Executor</string>
+    <string name="app_name_long">JCL Sound Command Executor</string>
 </resources>
