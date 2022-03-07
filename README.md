@@ -254,5 +254,5 @@ automated to supervised, and vice-versa, by using some toggle buttons.
 
 # Releases #
 
-### Release 1 published 2022-3 ###
+### Release 1 published 2022-3-7 ###
 
