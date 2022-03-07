@@ -18,7 +18,7 @@ android {
         minSdk 23
         targetSdk 31
         versionCode 1
-        versionName '1 2022-3-5 23-31'
+        versionName '1 2022-3-6 23-31'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.release
     }
