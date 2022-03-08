@@ -39,7 +39,7 @@ import java.util.List;
  * and who stopped hurting dolphins when he realized that they were sentient,
  * at a time when deadly experimentation with animals were common and ethically acceptable.</p>
  *
- * <p>Release 1 = 2022-3-5</p>
+ * <p>Release 1 = 2022-3-7</p>
  *
  * @since 2022-3-5
  */
