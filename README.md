@@ -45,7 +45,6 @@ This may be useful in an authentic sanctuary.
 7. If the executor app is this one, JCL, then select button EXECUTE.
 8. Select button SEND SUCCESS TO DC.
    This will send a success message to DC, DC message receiver screen will be shown.
-   To send data to DC, the executor app must have package prefix "dc.sc.ex." or "sm.app.dc."
 9. In DC CustomSoundCommandResultsReceiver (the receiver screen),
    inspect the text to ensure that all is well.
 10. The test is complete and you can use the CLOSE button in the receiver screen,
@@ -88,7 +87,6 @@ This may be useful in an authentic sanctuary.
 9. In the executor app, if it is built like the demo or JCL, 
    select the EXECUTE button which will generate a text in the results field.
 10. Select the SEND SUCCESS TO DC button, and this will send the results back to DC.
-    To send data to DC, the executor app must have package prefix "dc.sc.ex." or "sm.app.dc."
 11. Normally, DC's receiver activity CustomSoundCommandResultsReceiver will show up.  
     The results will also be shown in the main screen text (the chat text, aka. console)
 12. In the receiver screen, inspect the results and select the CLOSE button in the receiver screen.  
