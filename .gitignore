@@ -197,3 +197,91 @@ release/
 # You have to remove the file from the repository first:
 # git rm --cached .idea/workspace.xml
 
+
+
+# ########################
+
+*.pem
+*.pepk
+
+### from me
+
+.gitlab-ci.yml
+emitkeys.txt
+
+
+
+# Google Services (e.g. APIs or Firebase)
+# google-services.json
+
+!DolphinCommunicator.iml
+
+/.idea/misc.xml
+
+# use to remove file from git's index but leave it in local file system
+
+# If you have already committed the file, then ignoring won't have any effect. You have to remove the file from the repository first:
+# git rm --cached .idea/workspace.xml
+/.idea/inspectionProfiles/Project_Default.xml
+
+###
+# from https://github.com/meganz/android/blob/master/.gitignore
+
+/local.properties
+
+/build/
+
+### Android Studio files ###
+.idea/kotlinc.xml
+.idea/inspectionProfiles/Project_Default.xml
+
+# User-specific stuff:
+.idea/androidTestResultsUserPreferences.xml
+.idea/deploymentTargetDropDown.xml
+.idea/shelf/*
+
+# Sensitive or high-churn files:
+.idea/dataSources.xml
+
+# Gradle:
+.idea/libraries
+
+#Captures
+captures
+
+## File-based project format:
+/.idea/caches/build_file_checksums.ser
+/.idea/caches/gradle_models.ser
+
+## Google API key files
+/app/src/debug/res/values/google_maps_api.xml
+/app/src/release/res/values/google_maps_api.xml
+
+## Transifex script project
+/transifex/
+
+## Generated Files
+*.DS_Store
+wget-log
+
+# use to remove file from git's index but leave it in local file system
+
+# If you have already committed the file, then ignoring won't have any effect. You have to remove the file from the repository first:
+# git rm --cached .idea/workspace.xml
+
+# --- ref: https://github.com/kenmueller/gitignore
+
+# --- ref: https://gist.github.com/jstnlvns/ebaa046fae16543cc9efc7f24bcd0e31
+# Ignoring a previously committed file
+# If you want to ignore a file that you've committed in the past, you'll need to delete the file
+# from your repository and then add a .gitignore rule for it.
+# Using the --cached option with git rm means that the file will be deleted from your repository,
+# but will remain in your working directory as an ignored file.
+
+# $ echo debug.log >> .gitignore
+
+# $ git rm --cached debug.log
+# rm 'debug.log'
+
+# $ git commit -m "Start ignoring debug.log"
+# You can omit the --cached option if you want to delete the file from both the repository and your local file system.
